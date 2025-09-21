@@ -15,15 +15,18 @@ jobs:
           channel: 'stable'
           architecture: x64
       - run: flutter pub get
-      
-       - name: Set Development Team
-        run: |
-              plutil -replace DevelopmentTeam -string "$DEVELOPMENT_TEAM" ios/Runner.xcodeproj/project.pbxproj
-        
+                     
       - run: pod repo update
         working-directory: ios
 
       - run: flutter build ios --release --no-codesign
+
+
+       - name: Set Development Team
+
+            run: |
+              plutil -replace DevelopmentTeam -string "$DEVELOPMENT_TEAM" ios/Runner.xcodeproj/project.pbxproj
+
 
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
