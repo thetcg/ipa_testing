@@ -21,8 +21,8 @@ jobs:
         working-directory: ios
 
      
-         - name: Build for iOS Simulator
-          run: flutter build ios --simulator
+       - name: Build for iOS Simulator
+       -  run: flutter build ios --simulator
 
 
 
