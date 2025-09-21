@@ -30,6 +30,14 @@ jobs:
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
 
+        mkdir -p Payload
+        if [ ! -d "build/ios/iphoneos/Runner.app" ]; then
+        echo "Error: Runner.app not found!"
+        exit 1
+        fi
+        mv build/ios/iphoneos/Runner.app Payload/Runner.app
+
+
       - run: mv Runner.app/ Payload
         working-directory: build/ios/iphoneos
 
