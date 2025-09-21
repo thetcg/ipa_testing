@@ -21,9 +21,9 @@ jobs:
 
       - run: flutter build ios --release --no-codesign
 
-         
-       - name: Build iOS app (device)
-             run: flutter build ios --release --build-name=1.0.0 --build-number=1 --no-codesign
+      - name: Build for Simulator
+         run: flutter build ios --simulator
+       
 
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
