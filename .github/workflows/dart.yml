@@ -22,10 +22,10 @@ jobs:
       - run: flutter build ios --release --no-codesign
 
 
-       - name: Set Development Team
-
-            run: |
-              plutil -replace DevelopmentTeam -string "$DEVELOPMENT_TEAM" ios/Runner.xcodeproj/project.pbxproj
+       - name: Set development team
+         run: |
+            xcodebuild -workspace Runner.xcworkspace -scheme Runner -sdk iphoneos -configuration Release DEVELOPMENT_TEAM=<thetonycheung@gmail.com>
+         
 
        - name: Build iOS app (device)
              run: flutter build ios --release --build-name=1.0.0 --build-number=1 --no-codesign
