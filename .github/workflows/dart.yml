@@ -20,8 +20,7 @@ steps:
       - run: pod repo update
         working-directory: ios
 
-     
-       - name: Build for iOS Simulator
+    
        -  run: flutter build ios --simulator
 
 
