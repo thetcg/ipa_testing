@@ -14,6 +14,9 @@ jobs:
         with:
           channel: 'stable'
           architecture: x64
+
+      - name: Install dependencies
+
       - run: flutter pub get
       
 
@@ -21,7 +24,7 @@ jobs:
         working-directory: ios
 
       - run: flutter build ios --simulator
-      
+
       - run: mkdir Payload
         working-directory: build/ios/iphoneos
 
