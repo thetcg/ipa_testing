@@ -21,10 +21,7 @@ jobs:
 
       - run: flutter build ios --simulator
    
-      
-      - name: Build iOS
-        run: flutter build ios
-    
+          
       - name: Ensure build directory exists
         run: mkdir -p build/ios/iphoneos
 
