@@ -802,4 +802,4 @@ class ItemDetailScreen extends StatelessWidget {
       ),
     );
   }
-}}
+}
