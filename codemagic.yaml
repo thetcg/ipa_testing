@@ -2,20 +2,20 @@ workflows:
   ios-workflow:
     name: iOS Workflow
 
-        script: | 
+        script: 
           flutter pub get
       - name: Install pods
-        script: | 
+        script: 
           find . -name "Podfile" -execdir pod install \;
       - name: Flutter analyze
-        script: | 
+        script:  
           flutter analyze
       - name: Flutter unit tests
-        script: | 
+        script:  
           flutter test
         ignore_failure: true
       - name: Flutter build ipa
-        script: | 
+        script: 
           flutter build ipa --release \
           
       - build/ios/ipa/*.ipa
